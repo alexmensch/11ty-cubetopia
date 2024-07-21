@@ -1,0 +1,19 @@
+.site-header {
+    padding: get-size('600') 0;
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__brand {
+        flex-shrink: 0;
+        margin-inline-end: get-size('600'); // Prevents nav bunching
+    }
+
+    &__nav {
+        padding: get-size('300') 0;
+    }
+}
