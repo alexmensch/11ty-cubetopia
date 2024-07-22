@@ -102,6 +102,44 @@ def hello_world():
   variables = [ something, else, that's, separated, into, lots, of, smaller, inline, blocks, that, may, overflow ]
 ```
 
+This is more realistic code:
+
+```scss
+// Global styles start
+:root {
+  --flow-space: #{get-size("l")};
+}
+
+/* Debug: draw borders around all blocks */
+/*
+* {
+  border: 1px solid rgba(black, 0.2);
+}
+*/
+
+body {
+  background: get-color("light");
+  color: get-color("dark-shade");
+
+  @include apply-utility("text", 0);
+  @include apply-utility("font", "base");
+}
+
+a:not([class]) {
+  color: currentColor;
+  text-decoration-color: get-color("quinary");
+}
+
+:focus {
+  outline: 2px dashed get-color("primary");
+  outline-offset: 0.25rem;
+}
+
+main:focus {
+  outline: none;
+}
+```
+
 | Heading 1        | Heading 2 | A longer heading just for fun | Head |
 | ---------------- | --------- | ----------------------------- | ---- |
 | Data Row         | 7         | 8                             | 09   |

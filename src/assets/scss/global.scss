@@ -81,6 +81,10 @@ h6 {
 pre {
   margin-block-start: var(--flow-space) !important;
   font-size: smaller !important;
+
+  &[class*="language-"] {
+    background: get-color("light-glare");
+  }
 }
 
 blockquote {
@@ -129,6 +133,10 @@ table {
   }
 }
 
+hr {
+  color: get-color("dark-glare");
+}
+
 // High contrast selection because it can help visually-impaired
 // folks read the text easier
 ::selection {
@@ -159,6 +167,7 @@ table {
 @import "blocks/site-header";
 @import "blocks/nav";
 @import "blocks/site-footer";
+@import "blocks/footnotes";
 
 // Import utilities
 @import "utilities/flow";

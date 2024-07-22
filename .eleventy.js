@@ -103,10 +103,9 @@ export default function (eleventyConfig) {
 
   // Footnote HTML customization
   markdownLib.renderer.rules.footnote_block_open = () =>
-    "<hr/>\n" +
-    "<h4>Notes</h4>\n" +
-    '<section class="footnotes">\n' +
-    '<ol class="footnotes__list" role="list">\n';
+    '<section class="[ footnotes ] [ flow ]">\n' +
+    "<h2>Notes</h2>\n" +
+    '<ol role="list">\n';
 
   // Override footnote indicator render to output a number without square brackets
   markdownLib.renderer.rules.footnote_caption = (tokens, idx) => {
