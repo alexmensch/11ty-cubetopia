@@ -101,6 +101,30 @@ blockquote {
   }
 }
 
+table {
+  text-align: start;
+  border-collapse: collapse;
+  caption-side: bottom;
+
+  thead {
+    border-block-end: 3px solid get-color("quinary");
+
+    th {
+      vertical-align: bottom;
+      background: get-color("light-glare");
+    }
+  }
+
+  th,
+  td {
+    border: 1px solid get-color("dark-glare");
+    padding: #{get-size("2xs")} #{get-size("2xs")};
+
+    vertical-align: baseline;
+    text-align: end;
+  }
+}
+
 // High contrast selection because it can help visually-impaired
 // folks read the text easier
 ::selection {
