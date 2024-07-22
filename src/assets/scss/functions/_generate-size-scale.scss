@@ -1,15 +1,20 @@
-@use '../../../../node_modules/utopia-core-scss/src/utopia' as utopia;
+@use "../../../../node_modules/utopia-core-scss/src/utopia" as utopia;
 
 @function generate-size-scale($params) {
-    $output: ();
-    
-    @each $key, $value in utopia.calculateSpaceScale($params) {
-      @each $item in $value {
-        $label: map-get($item, 'label');
-        $clamp: map-get($item, 'clamp');
-        $output: map-merge($output, ($label: $clamp));
-      }
+  $output: ();
+
+  @each $key, $value in utopia.calculateSpaceScale($params) {
+    @each $item in $value {
+      $label: map-get($item, "label");
+      $clamp: map-get($item, "clamp");
+      $output: map-merge(
+        $output,
+        (
+          $label: $clamp,
+        )
+      );
     }
-    
-    @return $output;
+  }
+
+  @return $output;
 }

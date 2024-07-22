@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Baseline Eleventy site using CUBE CSS and Utopia fluid type and spacing",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "npx @11ty/eleventy",
     "clean": "rm -rf _site",
@@ -27,11 +28,10 @@
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "gorko": "^0.9.1",
+    "lorem-ipsum": "^2.0.8",
     "luxon": "^3.4.4",
     "markdown-it": "^14.1.0",
-    "markdown-it-anchor": "^9.0.1",
     "markdown-it-footnote": "^4.0.0",
-    "markdown-it-table-of-contents": "^0.6.0",
     "sass": "^1.77.8",
     "slugify": "^1.6.6",
     "utopia-core-scss": "^1.1.0"

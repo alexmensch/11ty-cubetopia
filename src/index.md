@@ -1,41 +1,58 @@
 ---
-layout: "layouts/base"
+layout: "layouts/home"
+intro:
+  main: "Vivamus quis tortor metus. Pellentesque faucibus erat sit amet sagittis."
+  summary: |
+    Fugiat commodo adipisicing culpa elit ut eiusmod cillum ad commodo ipsum occaecat. Reprehenderit culpa aliquip excepteur in commodo eu ea veniam exercitation. Ad sunt enim duis in adipisicing sit aliquip do non. Voluptate esse consequat pariatur in fugiat nisi in elit ex velit aliquip nostrud ipsum. Aliquip in id ut minim id nisi nisi aliquip Lorem ex ea laborum.
 ---
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
 
 # Heading 1
 
-A paragraph of text with lots of words in it so that we see how multiple lines of text come together with line spacing and so on and so forth. Hopefully by just trying whatever is coming out of my head we'll have enough randomness in this paragraph that we'll get a realistic sense of how the typsetting feels in a full English paragraph.
+{{ 1 | loremIpsum: "sentence" }}
 
 ## Heading 2
 
-A paragraph of text with lots of words in it so that we see how multiple lines of text come together with line spacing and so on and so forth. Hopefully by just trying whatever is coming out of my head we'll have enough randomness in this paragraph that we'll get a realistic sense of how the typsetting feels in a full English paragraph.
+{{ 1 | loremIpsum: "sentence" }}
 
 ### Heading 3
 
-A paragraph of text with lots of words in it so that we see how multiple lines of text come together with line spacing and so on and so forth. Hopefully by just trying whatever is coming out of my head we'll have enough randomness in this paragraph that we'll get a realistic sense of how the typsetting feels in a full English paragraph.
+{{ 1 | loremIpsum: "sentence" }}
 
 #### Heading 4
 
-A paragraph of text with lots of words in it so that we see how multiple lines of text come together with line spacing and so on and so forth. Hopefully by just trying whatever is coming out of my head we'll have enough randomness in this paragraph that we'll get a realistic sense of how the typsetting feels in a full English paragraph.
+{{ 1 | loremIpsum: "sentence" }}
 
 ##### Heading 5
 
-A paragraph of text with lots of words in it so that we see how multiple lines of text come together with line spacing and so on and so forth. Hopefully by just trying whatever is coming out of my head we'll have enough randomness in this paragraph that we'll get a realistic sense of how the typsetting feels in a full English paragraph.
+{{ 1 | loremIpsum: "sentence" }}
 
 ###### Heading 6
 
-A paragraph of text with lots of words in it so that we see how multiple lines of text come together with line spacing and so on and so forth. Hopefully by just trying whatever is coming out of my head we'll have enough randomness in this paragraph that we'll get a realistic sense of how the typsetting feels in a full English paragraph.
+{{ 1 | loremIpsum: "sentence" }}
+
+# {{ 10 | loremIpsum: 'words' | capitalize }}
+
+{{ 1 | loremIpsum: "paragraphs" }}
+
+## {{ 10 | loremIpsum: 'words' | capitalize }}
+
+{{ 1 | loremIpsum: "paragraphs" }}
+
+### {{ 10 | loremIpsum: 'words' | capitalize }}
+
+{{ 1 | loremIpsum: "paragraphs" }}
+
+#### {{ 10 | loremIpsum: 'words' | capitalize }}
+
+{{ 1 | loremIpsum: "paragraphs" }}
+
+##### {{ 10 | loremIpsum: 'words' | capitalize }}
+
+{{ 1 | loremIpsum: "paragraphs" }}
+
+###### {{ 10 | loremIpsum: 'words' | capitalize }}
+
+{{ 1 | loremIpsum: "paragraphs" }}
 
 This is a line of text that will be inserted between paragraph HTML tags.
 

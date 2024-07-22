@@ -1,7 +1,19 @@
-const slugify = require("slugify");
-const { DateTime } = require("luxon");
+import slugify from "slugify";
+import { DateTime } from "luxon";
+import { LoremIpsum } from "lorem-ipsum";
 
-module.exports = {
+const lorem = new LoremIpsum({
+  sentencesPerParagraph: {
+    max: 8,
+    min: 4,
+  },
+  wordsPerSentence: {
+    max: 16,
+    min: 4,
+  },
+});
+
+export default {
   currentYear: function () {
     return new Date().getFullYear();
   },
@@ -36,5 +48,20 @@ module.exports = {
     }
 
     return response;
+  },
+  loremIpsum(count, type) {
+    switch (type) {
+      case "words":
+      case "word":
+        return lorem.generateWords(count);
+      case "sentences":
+      case "sentence":
+        return lorem.generateSentences(count);
+      case "paragraphs":
+      case "paragraph":
+        return lorem.generateParagraphs(count);
+      default:
+        return "Invalid input. Parameters were: ${count} and ${type}";
+    }
   },
 };

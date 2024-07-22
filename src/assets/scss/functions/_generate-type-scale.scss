@@ -1,12 +1,17 @@
-@use '../../../../node_modules/utopia-core-scss/src/utopia' as utopia;
+@use "../../../../node_modules/utopia-core-scss/src/utopia" as utopia;
 
 @function generate-type-scale($params) {
   $output: ();
 
   @each $item in utopia.calculateTypeScale($params) {
-    $label: map-get($item, 'step');
-    $clamp: map-get($item, 'clamp');
-    $output: map-merge($output, ($label: $clamp));
+    $label: map-get($item, "step");
+    $clamp: map-get($item, "clamp");
+    $output: map-merge(
+      $output,
+      (
+        $label: $clamp,
+      )
+    );
   }
 
   @return $output;

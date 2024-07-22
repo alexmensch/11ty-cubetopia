@@ -1,27 +1,22 @@
-const md = require("markdown-it");
-const mdAnchor = require("markdown-it-anchor");
-const mdTOC = require("markdown-it-table-of-contents");
-const mdFN = require("markdown-it-footnote");
-const { DateTime } = require("luxon");
-const fs = require("fs");
-const sass = require("sass");
-const path = require("node:path");
+import md from "markdown-it";
+import mdFN from "markdown-it-footnote";
+import sass from "sass";
+import path from "node:path";
 
-const eleventyImg = require("@11ty/eleventy-img");
-const eleventyImageTransformPlugin = eleventyImg.eleventyImageTransformPlugin;
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import directoryOutputPlugin from "@11ty/eleventy-plugin-directory-output";
+import { IdAttributePlugin } from "@11ty/eleventy";
 
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
-const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
+import helpers from "./src/_data/helpers.js";
+import siteConfig from "./src/_data/site.js";
 
-const helpers = require("./src/_data/helpers");
-const siteConfig = require("./src/_data/site");
-
-module.exports = async function (eleventyConfig) {
+export default function (eleventyConfig) {
   /* 11ty Plugins */
   /****************/
   // Image transforms
-  const { InputPathToUrlTransformPlugin } = await import("@11ty/eleventy");
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
@@ -40,6 +35,12 @@ module.exports = async function (eleventyConfig) {
   // Syntax highlighting
   eleventyConfig.addPlugin(syntaxHighlight);
 
+  // Add anchors to headings
+  eleventyConfig.addPlugin(IdAttributePlugin, {
+    // Use standard slugify filter
+    slugify: helpers.toSlug,
+  });
+
   // RSS / Atom feed
   eleventyConfig.addPlugin(feedPlugin, {
     type: "atom", // or "rss", "json"
@@ -55,7 +56,7 @@ module.exports = async function (eleventyConfig) {
       base: `https://${siteConfig.domain}`,
       author: {
         name: siteConfig.authorName,
-        email: siteConfig.authorEmail // Optional
+        email: siteConfig.authorEmail, // Optional
       },
     },
   });
@@ -97,22 +98,13 @@ module.exports = async function (eleventyConfig) {
   let markdownLib = md({
     typographer: true,
   })
-    // Heading anchors
-    .use(mdAnchor, {
-      permalink: mdAnchor.permalink.headerLink({ safariReaderFix: true }),
-    })
-    // Table of Contents
-    .use(mdTOC, {
-      includeLevel: [1, 2, 3], // Levels to include in the TOC
-      containerClass: "toc", // Class for the TOC container
-    })
     // Footnotes
     .use(mdFN);
 
   // Footnote HTML customization
   markdownLib.renderer.rules.footnote_block_open = () =>
-    '<hr/>\n' +
-    '<h4>Notes</h4>\n' +
+    "<hr/>\n" +
+    "<h4>Notes</h4>\n" +
     '<section class="footnotes">\n' +
     '<ol class="footnotes__list">\n';
 
@@ -174,6 +166,11 @@ module.exports = async function (eleventyConfig) {
   // Called like this: {{ pagePath | getLinkActiveState: parentPath }}
   eleventyConfig.addFilter("getLinkActiveState", helpers.getLinkActiveState);
 
+  // Generate lorem ipsum for use in content
+  // Called like this: {{ count | loremIpsum: type }}
+  // Where type is one of: words, sentences, paragraphs
+  eleventyConfig.addFilter("loremIpsum", helpers.loremIpsum);
+
   return {
     // Set directories to watch
     dir: {
@@ -187,4 +184,4 @@ module.exports = async function (eleventyConfig) {
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "liquid",
   };
-};
+}

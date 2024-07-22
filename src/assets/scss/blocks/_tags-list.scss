@@ -4,11 +4,11 @@
   align-items: flex-start;
 
   &[class] {
-    margin-inline-start: -#{get-size('s')};
+    margin-inline-start: -#{get-size("s")};
   }
 
   > * {
-    padding-top: #{get-size('s')};
-    padding-inline-start: #{get-size('s')};
+    padding-top: #{get-size("s")};
+    padding-inline-start: #{get-size("s")};
   }
 }

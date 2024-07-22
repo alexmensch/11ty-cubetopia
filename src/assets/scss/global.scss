@@ -1,86 +1,79 @@
 // Import gorko config and Gorko utility
-@import 'config';
-@import '../../../node_modules/gorko/gorko.scss';
+@import "config";
+@import "../../../node_modules/gorko/gorko.scss";
 
-@import 'reset';
+@import "reset";
 
 // Global styles start
 :root {
-    --flow-space: #{get-size('l')};
+  --flow-space: #{get-size("l")};
 }
 
+/* Debug: draw borders around all blocks */
 * {
   border: 1px solid rgba(black, 0.2);
 }
 
 body {
-    background: get-color('light');
-    color: get-color('dark-shade');
+  background: get-color("light");
+  color: get-color("dark-shade");
 
-    @include apply-utility('text', 0);
-    @include apply-utility('font', 'base');
+  @include apply-utility("text", 0);
+  @include apply-utility("font", "base");
 }
 
 a:not([class]) {
-    color: currentColor;
-    text-decoration-color: get-color('quinary');
+  color: currentColor;
+  text-decoration-color: get-color("quinary");
 }
 
 :focus {
-  outline: 2px dashed get-color('primary');
+  outline: 2px dashed get-color("primary");
   outline-offset: 0.25rem;
 }
-  
+
 main:focus {
   outline: none;
 }
 
 h1 {
-  @include apply-utility('text', 5);
+  @include apply-utility("text", 5);
 }
 
 h2 {
-  @include apply-utility('text', 4);
+  @include apply-utility("text", 4);
 }
 
 h3 {
-  @include apply-utility('text', 3);
+  @include apply-utility("text", 3);
 }
 
 h4 {
-  @include apply-utility('text', 2);
+  @include apply-utility("text", 2);
 }
 
 h5 {
-  @include apply-utility('text', 1);
+  @include apply-utility("text", 1);
 }
 
 h6 {
-  @include apply-utility('text', 0);
+  @include apply-utility("text", 0);
 }
 
 h1,
 h2,
 h3,
-h4 {
-    @include apply-utility('weight', 'bold');
-    @include apply-utility('font', 'sans');
-    @include apply-utility('leading', 'flat');
-}
-
+h4,
 h5,
 h6 {
-    @include apply-utility('font', 'sans');
-}
-
-h1,
-h2,
-h3 {
-    @include apply-utility('measure', 'compact');
+  @include apply-utility("weight", "bold");
+  @include apply-utility("font", "sans");
+  @include apply-utility("leading", "flat");
+  @include apply-utility("measure", "compact");
 }
 
 blockquote {
-    @include apply-utility('measure', 'short');
+  @include apply-utility("measure", "short");
 }
 
 /* Center actual written articles, need to review impact on rest of site first
@@ -90,56 +83,48 @@ article {
 }
 */
 
-h1,
-h2,
-h3,
-blockquote {
-    --flow-space: #{get-size('m')};
-}
-
-:is(h1, h2, h3) + * {
-    --flow-space: #{get-size('2xs')};
+:is(h1, h2, h3, h4, h5, h6) + * {
+  --flow-space: #{get-size("2xs")};
 }
 
 // High contrast selection because it can help visually-impaired
 // folks read the text easier
 ::selection {
-  color: get-color('light');
+  color: get-color("light");
 
   // We set this as an RGBA because that’s how you get a solid color, by using 0.99
   // alpha value. Browsers are wild.
-  background: rgba(get-color('dark-shade'), 0.99);
+  background: rgba(get-color("dark-shade"), 0.99);
 }
 
 // Scrollbar styles
 ::-webkit-scrollbar {
-    height: 1rem;
+  height: 1rem;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: transparent;
-    border: 1px solid get-color('dark-glare');
+  background-color: transparent;
+  border: 1px solid get-color("dark-glare");
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: get-color('dark');
+  background-color: get-color("dark");
 }
 
 // Import blocks
-@import 'blocks/definition-group';
-@import 'blocks/tags-list';
-@import 'blocks/button';
-@import 'blocks/skip-link';
-@import 'blocks/site-header';
-@import 'blocks/nav';
-@import 'blocks/site-footer';
+@import "blocks/definition-group";
+@import "blocks/tags-list";
+@import "blocks/button";
+@import "blocks/skip-link";
+@import "blocks/site-header";
+@import "blocks/nav";
+@import "blocks/site-footer";
 
 // Import utilities
-@import 'utilities/dot-shadow';
-@import 'utilities/flow';
-@import 'utilities/frame';
-@import 'utilities/panel';
-@import 'utilities/radius';
-@import 'utilities/site-wrap';
-@import 'utilities/visually-hidden';
-@import 'utilities/wrapper';
+@import "utilities/flow";
+@import "utilities/frame";
+@import "utilities/panel";
+@import "utilities/radius";
+@import "utilities/site-wrap";
+@import "utilities/visually-hidden";
+@import "utilities/wrapper";
