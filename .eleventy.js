@@ -116,14 +116,26 @@ export default function (eleventyConfig) {
   };
 
   // Add role="list" attribute for accessibility and correct styling
-  markdownLib.renderer.rules.bullet_list_open = (tokens, idx, options, env, self) => {
-    tokens[idx].attrPush(['role', 'list']);
+  markdownLib.renderer.rules.bullet_list_open = (
+    tokens,
+    idx,
+    options,
+    env,
+    self,
+  ) => {
+    tokens[idx].attrPush(["role", "list"]);
     return self.renderToken(tokens, idx, options);
   };
 
   // Add role="list" attribute for accessibility and correct styling
-  markdownLib.renderer.rules.ordered_list_open = (tokens, idx, options, env, self) => {
-    tokens[idx].attrPush(['role', 'list']);
+  markdownLib.renderer.rules.ordered_list_open = (
+    tokens,
+    idx,
+    options,
+    env,
+    self,
+  ) => {
+    tokens[idx].attrPush(["role", "list"]);
     return self.renderToken(tokens, idx, options);
   };
 
