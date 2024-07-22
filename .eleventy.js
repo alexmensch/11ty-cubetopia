@@ -1,6 +1,6 @@
 import md from "markdown-it";
 import mdFN from "markdown-it-footnote";
-import sass from "sass";
+import * as sass from "sass";
 import path from "node:path";
 
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";

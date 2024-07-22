@@ -6,15 +6,15 @@ export default {
   includes: [
     {
       rel: "stylesheet",
-      href: "/assets/css/global.css",
-    },
-    {
-      rel: "stylesheet",
       href: "/assets/css/fonts.css",
     },
     {
       rel: "stylesheet",
-      href: "/assets/css/prism.css",
+      href: "/assets/css/syntax.css",
+    },
+    {
+      rel: "stylesheet",
+      href: "/assets/css/global.css",
     },
   ],
   rss: {

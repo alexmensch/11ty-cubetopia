@@ -10,9 +10,11 @@
 }
 
 /* Debug: draw borders around all blocks */
+/*
 * {
   border: 1px solid rgba(black, 0.2);
 }
+*/
 
 body {
   background: get-color("light");
@@ -76,12 +78,11 @@ blockquote {
   @include apply-utility("measure", "short");
 }
 
-/* Center actual written articles, need to review impact on rest of site first
-article {
-    @include apply-utility('measure', 'long');
-    margin-inline: auto;
+// Override styling in PrismJS CSS
+pre {
+  margin-block-start: var(--flow-space) !important;
+  font-size: smaller !important;
 }
-*/
 
 :is(h1, h2, h3, h4, h5, h6) + * {
   --flow-space: #{get-size("2xs")};

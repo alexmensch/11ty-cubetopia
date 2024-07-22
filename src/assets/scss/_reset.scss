@@ -23,20 +23,25 @@ h4,
 h5,
 h6,
 p,
+pre,
 figure,
 blockquote,
 dl,
 dd {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
+  margin-block: 0 0;
+  margin-inline: 0 0;
+  padding-block: 0 0;
+  padding-inline: 0 0;
 }
 
 // Remove list styles on ul, ol elements without a list role
 ul:not([role="list"]),
 ol:not([role="list"]) {
   list-style: none;
+  margin-block: 0 0;
+  margin-inline: 0 0;
+  padding-block: 0 0;
+  padding-inline: 0 0;
 }
 
 // Set core body defaults
@@ -65,7 +70,7 @@ h4 {
 }
 
 // A elements that don't have a class get default styles
-a:not([class]) {
+a {
   text-decoration-skip-ink: auto;
   color: currentColor;
 }

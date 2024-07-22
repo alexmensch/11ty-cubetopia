@@ -84,11 +84,12 @@ This is an ordered list of items:
 
 ```python
 import banana
-# There is an extra space at the start of the first line...why?
 from library import module as monkey
 
 def hello_world():
   printf("%s", monkey.say_hello())
+  variable = "something really super long so that it's guaranteed to require some wrap in the container this code finds itself in"
+  variables = [ something, else, that's, separated, into, lots, of, smaller, inline, blocks, that, may, overflow ]
 ```
 
 | Heading 1        | Heading 2 | A longer heading just for fun | Head |
