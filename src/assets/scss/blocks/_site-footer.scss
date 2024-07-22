@@ -1,6 +1,6 @@
 .site-footer {
-    padding-block-start: #{get-size("xl")};
-    padding-block-end: #{get-size("m")};
+  padding-block-start: #{get-size("xl")};
+  padding-block-end: #{get-size("m")};
   text-align: center;
   @include apply-utility("text", -2);
 }
