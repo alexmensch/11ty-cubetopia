@@ -1,5 +1,5 @@
 .site-header {
-    padding: get-size('l') 0;
+    padding: #{get-size('l')} 0;
 
     &__inner {
         display: flex;
@@ -10,10 +10,10 @@
 
     &__brand {
         flex-shrink: 0;
-        margin-inline-end: get-size('l'); // Prevents nav bunching
+        margin-inline-end: #{get-size('l')}; // Prevents nav bunching
     }
 
     &__nav {
-        padding: get-size('xs') 0;
+        padding: #{get-size('xs')} 0;
     }
 }

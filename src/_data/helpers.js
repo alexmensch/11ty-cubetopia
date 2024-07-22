@@ -24,4 +24,17 @@ module.exports = {
     const formatString = ["yyyy", "LL", "dd"].join(delim);
     return DateTime.fromJSDate(date).toFormat(formatString);
   },
+  getLinkActiveState(itemPath, pagePath) {
+    let response = "";
+
+    if (itemPath === pagePath) {
+      response = ' aria-current="page"';
+    }
+
+    if (itemPath.length > 1 && pagePath.indexOf(itemPath) === 0) {
+      response += ' data-state="active"';
+    }
+
+    return response;
+  },
 };

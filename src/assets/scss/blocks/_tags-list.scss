@@ -8,7 +8,7 @@
   }
 
   > * {
-    padding-top: get-size('s');
-    padding-inline-start: get-size('s');
+    padding-top: #{get-size('s')};
+    padding-inline-start: #{get-size('s')};
   }
 }

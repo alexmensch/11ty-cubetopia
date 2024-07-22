@@ -15,6 +15,7 @@ const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 
 const helpers = require("./src/_data/helpers");
+const siteConfig = require("./src/_data/site");
 
 module.exports = async function (eleventyConfig) {
   /* 11ty Plugins */
@@ -42,19 +43,19 @@ module.exports = async function (eleventyConfig) {
   // RSS / Atom feed
   eleventyConfig.addPlugin(feedPlugin, {
     type: "atom", // or "rss", "json"
-    outputPath: "/feed.atom",
+    outputPath: `/${siteConfig.rss.collection}.atom`,
     collection: {
-      name: "all", // iterate over `collections.posts`
+      name: siteConfig.rss.collection, // iterate over `collections.posts`
       limit: 0, // 0 means no limit
     },
     metadata: {
       language: "en",
-      title: "My Site | All Posts",
-      subtitle: "All posts from My Site",
-      base: "https://your-site.com",
+      title: `${siteConfig.siteName} | ${siteConfig.rss.title}`,
+      subtitle: siteConfig.rss.subtitle,
+      base: `https://${siteConfig.domain}`,
       author: {
-        name: "Your Name",
-        email: "", // Optional
+        name: siteConfig.authorName,
+        email: siteConfig.authorEmail // Optional
       },
     },
   });
@@ -77,11 +78,15 @@ module.exports = async function (eleventyConfig) {
 
   /* Collections config */
   /**********************/
+  // Collections are defined in src/_data/site.js in the "nav" object
   let postCollections = new Set();
-  postCollections.add("posts");
+  siteConfig.nav.forEach((item) => {
+    if (item.collection) {
+      postCollections.add(item.url.replace(/\//g, ""));
+    }
+  });
 
   postCollections.forEach((collectionName) => {
-    // Collection for all items
     eleventyConfig.addCollection(`${collectionName}`, function (collectionApi) {
       return collectionApi.getFilteredByGlob(`src/${collectionName}/*.md`);
     });
@@ -161,6 +166,13 @@ module.exports = async function (eleventyConfig) {
       };
     },
   });
+
+  /* Custom filters */
+  /******************/
+
+  // Custom filter to determine if current page is within parent link path
+  // Called like this: {{ pagePath | getLinkActiveState: parentPath }}
+  eleventyConfig.addFilter("getLinkActiveState", helpers.getLinkActiveState);
 
   return {
     // Set directories to watch

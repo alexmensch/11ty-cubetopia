@@ -9,10 +9,13 @@
     --flow-space: #{get-size('l')};
 }
 
+* {
+  border: 1px solid rgba(black, 0.2);
+}
+
 body {
     background: get-color('light');
     color: get-color('dark-shade');
-    line-height: 1.5;
 
     @include apply-utility('text', 0);
     @include apply-utility('font', 'base');
@@ -32,42 +35,70 @@ main:focus {
   outline: none;
 }
 
+h1 {
+  @include apply-utility('text', 5);
+}
+
+h2 {
+  @include apply-utility('text', 4);
+}
+
+h3 {
+  @include apply-utility('text', 3);
+}
+
+h4 {
+  @include apply-utility('text', 2);
+}
+
+h5 {
+  @include apply-utility('text', 1);
+}
+
+h6 {
+  @include apply-utility('text', 0);
+}
+
 h1,
 h2,
 h3,
 h4 {
-    font-weight: 900;
-
+    @include apply-utility('weight', 'bold');
     @include apply-utility('font', 'sans');
     @include apply-utility('leading', 'flat');
 }
 
-h1 {
-    max-width: 20ch;
+h5,
+h6 {
+    @include apply-utility('font', 'sans');
 }
 
+h1,
 h2,
 h3 {
-    max-width: 28ch;
+    @include apply-utility('measure', 'compact');
 }
 
 blockquote {
-    max-width: 50ch;
+    @include apply-utility('measure', 'short');
 }
 
 /* Center actual written articles, need to review impact on rest of site first
 article {
-    max-width: 65ch;
+    @include apply-utility('measure', 'long');
     margin-inline: auto;
 }
 */
 
-:is(h1, h2, h3, blockquote) {
-    --flow-space: 1.5em;
+h1,
+h2,
+h3,
+blockquote {
+    --flow-space: #{get-size('m')};
 }
 
 :is(h1, h2, h3) + * {
-    --flow-space: 0.5em;
+    --flow-space: #{get-size('2xs')};
 }
 
 // High contrast selection because it can help visually-impaired
@@ -88,12 +119,10 @@ article {
 ::-webkit-scrollbar-track {
     background-color: transparent;
     border: 1px solid get-color('dark-glare');
-    border-radius: 0.25rem;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: get-color('dark');
-    border-radius: 0.25rem;
 }
 
 // Import blocks

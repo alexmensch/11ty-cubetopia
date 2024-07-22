@@ -4,8 +4,6 @@ $frame-colors: ('primary', 'secondary', 'quaternary', 'quinary');
   position: relative;
 
   &::before {
-    // I don't like @extends, but I'll create an exception
-    // for consistency
     @extend .radius;
 
     content: '';

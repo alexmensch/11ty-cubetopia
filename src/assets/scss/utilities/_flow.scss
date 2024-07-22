@@ -1,7 +1,5 @@
-/**
- * FLOW
- * Applies a margin to sibling elements based on a --flow-space custom property.
- */
+// FLOW
+// Applies a margin to sibling elements based on a --flow-space custom property.
 .flow > * + * {
   margin-block-start: var(--flow-space, 1em);
 }

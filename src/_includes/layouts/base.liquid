@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="{{ eleventy.generator }}" />
+        {% render "partials/site-includes" site: site %}
+        {% render "partials/rss" site: site %}
+        <title>{{ title }} • {{ site.siteName }}</title>
+    </head>
+    <body>
+        <div class="site-wrap">
+            {% render "partials/site-header"
+                site: site,
+                page: page
+                %}
+            <main tabindex="-1" id="main-content">
+                {{ content }}
+            </main>
+            {% render "partials/site-footer"
+                helpers: helpers,
+                site: site %}
+        </div>
+    </body>
+</html>

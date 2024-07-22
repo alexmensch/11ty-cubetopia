@@ -1,0 +1,26 @@
+<a class="[ skip-link ] [ button ]" href="#main-content">Skip to content</a>
+<header role="banner" class="site-header">
+    <div class="wrapper">
+        <div class="site-header__inner">
+            <a href="/" aria-label="{{ site.siteName }} - Home" class="site-header__brand">
+                {{ site.siteName }}
+            </a>
+            <nav class="[ nav ] [site-header__nav ] [ font-sans ]" aria-label="Primary">
+                <ul class="nav__list">
+                    {% for item in site.nav %}
+                        {% unless item.hidden %}
+                            <li>
+                                <a
+                                    href="{{ item.url }}"
+                                    {{ item.url | getLinkActiveState: page.url }}
+                                    >
+                                    {{ item.title }}
+                                </a>
+                            </li>
+                        {% endunless %}
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
