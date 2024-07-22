@@ -1,11 +1,11 @@
-@use 'functions/scales' as scales;
+@import 'functions/functions';
 
 // @link https://utopia.fyi/space/calculator?c=320,18,1.067,1240,24,1.125,5,2,&s=0.75|0.5,1.5|2|3|4|6,&g=s,l,xl,12
 // Generates 8 individual space values:  2xs, xs, s, m, l, xl, 2xl, 3xl
 //       and 7 single step space values: 2xs-xs, xs-s, etc..
 // NB: $gorko-size-scale is a special case variable allowing lookups 
 // via get-size($key)
-$gorko-size-scale: scales.generate-size-scale((
+$gorko-size-scale: generate-size-scale((
   "minWidth": 320,
   "maxWidth": 1240,
   "minSize": 18,
@@ -19,7 +19,7 @@ $gorko-size-scale: scales.generate-size-scale((
 // @link https://utopia.fyi/type/calculator?c=320,18,1.067,1240,24,1.125,5,2,&s=0.75|0.5,1.5|2|3|4|6,s-l&g=s,l,xl,12
 // Generates 8 font size steps: -2, -1, 0, 1, 2, 3, 4, 5
 // These font sizes and the space values above follow the same type scale (follow the link above)
-$type-scale: scales.generate-type-scale((
+$type-scale: generate-type-scale((
   "minWidth": 320,
   "maxWidth": 1240,
   "minFontSize": 18,

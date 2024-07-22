@@ -1,6 +1,7 @@
 // Import gorko config and Gorko utility
 @import 'config';
 @import '../../../node_modules/gorko/gorko.scss';
+@import 'functions/functions';
 
 @import 'reset';
 
@@ -13,7 +14,7 @@ body {
     background: get-color('light');
     color: get-color('dark-shade');
     line-height: 1.5;
-    font-size: get-size('0');
+    font-size: get-type-size(0);
 
     @include apply-utility('font', 'base');
 }
