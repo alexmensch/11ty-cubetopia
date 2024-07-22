@@ -1,5 +1,6 @@
 ---
 layout: "layouts/home"
+title: Home
 intro:
   main: "Vivamus quis tortor metus. Pellentesque faucibus erat sit amet sagittis."
   summary: |
@@ -58,9 +59,9 @@ This is a line of text that will be inserted between paragraph HTML tags.
 
 [This entire sentence is a link.](https://www.google.com/) Only the word [monkey](https://www.yahoo.com/) is a link in this sentence.
 
-The word **strong** has strong emphasis in this sentence. The word _italics_ is, well, you guessed it, italicized in this sentence. **_Strong italics_** has both styles applied, which is honestly a bit _much_.
+The word **strong** has strong emphasis in this sentence. The word _italics_ is, well, you guessed it, italicized in this sentence. **_Strong italics_** has both styles applied, which is honestly a bit _much_.^[This is a footnote about the sentence linked above.]
 
-This is an unordered list of items:
+This is an unordered list of items:^[Another footnote about the unordered list.]
 
 - Banana
 - Coconut
@@ -70,6 +71,11 @@ This is an unordered list of items:
   - Spicy sausage
   - Protein
     - Alligator
+    - Rabbit
+    - Felines
+      1. Cats
+      2. Lions
+      3. Tigers
 
 This is an ordered list of items:
 
@@ -81,6 +87,10 @@ This is an ordered list of items:
 > This is something that someone _else_ said, not I. They continue with their quote here
 >
 > > And in this case we're quoting someone that quoted someone. Wild!
+
+Another sentence to break things up.
+
+> {{ 3 | loremIpsum: "sentences" }}
 
 ```python
 import banana

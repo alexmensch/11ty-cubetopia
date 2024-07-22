@@ -74,18 +74,31 @@ h6 {
   @include apply-utility("measure", "compact");
 }
 
-blockquote {
-  @include apply-utility("measure", "short");
+:is(h1, h2, h3, h4, h5, h6) + * {
+  --flow-space: #{get-size("2xs")};
 }
 
-// Override styling in PrismJS CSS
 pre {
   margin-block-start: var(--flow-space) !important;
   font-size: smaller !important;
 }
 
-:is(h1, h2, h3, h4, h5, h6) + * {
-  --flow-space: #{get-size("2xs")};
+blockquote {
+  @include apply-utility("measure", "short");
+
+  border-inline-start: 0.75rem solid get-color('quinary');
+  padding-inline-start: #{get-size('m')};;
+  padding-block: #{get-size('2xs')};;
+  font-style: italic;
+}
+
+:is(ul, ol)[role="list"] {
+  padding-inline-start: #{get-size('m')};
+
+  li + li,
+  li > :is(ul, ol) {
+    margin-block-start: #{get-size('2xs')};
+  }
 }
 
 // High contrast selection because it can help visually-impaired
@@ -113,8 +126,6 @@ pre {
 }
 
 // Import blocks
-@import "blocks/definition-group";
-@import "blocks/tags-list";
 @import "blocks/button";
 @import "blocks/skip-link";
 @import "blocks/site-header";
@@ -123,8 +134,6 @@ pre {
 
 // Import utilities
 @import "utilities/flow";
-@import "utilities/frame";
-@import "utilities/panel";
 @import "utilities/radius";
 @import "utilities/site-wrap";
 @import "utilities/visually-hidden";

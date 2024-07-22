@@ -106,13 +106,25 @@ export default function (eleventyConfig) {
     "<hr/>\n" +
     "<h4>Notes</h4>\n" +
     '<section class="footnotes">\n' +
-    '<ol class="footnotes__list">\n';
+    '<ol class="footnotes__list" role="list">\n';
 
   // Override footnote indicator render to output a number without square brackets
   markdownLib.renderer.rules.footnote_caption = (tokens, idx) => {
     let n = Number(tokens[idx].meta.id + 1).toString();
     if (tokens[idx].meta.subId > 0) n += `:${tokens[idx].meta.subId}`;
     return `${n}`;
+  };
+
+  // Add role="list" attribute for accessibility and correct styling
+  markdownLib.renderer.rules.bullet_list_open = (tokens, idx, options, env, self) => {
+    tokens[idx].attrPush(['role', 'list']);
+    return self.renderToken(tokens, idx, options);
+  };
+
+  // Add role="list" attribute for accessibility and correct styling
+  markdownLib.renderer.rules.ordered_list_open = (tokens, idx, options, env, self) => {
+    tokens[idx].attrPush(['role', 'list']);
+    return self.renderToken(tokens, idx, options);
   };
 
   // Set the Markdown library to use
