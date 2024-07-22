@@ -1,21 +1,19 @@
-// Import gorko config
+// Import gorko config and Gorko utility
 @import 'config';
-
-// Import Gorko
 @import '../../../node_modules/gorko/gorko.scss';
 
 @import 'reset';
 
 // Global styles start
 :root {
-    --flow-space: #{get-size('600')};
+    --flow-space: #{get-size('l')};
 }
 
 body {
     background: get-color('light');
     color: get-color('dark-shade');
     line-height: 1.5;
-    font-size: get-size('500');
+    font-size: get-size('0');
 
     @include apply-utility('font', 'base');
 }
@@ -57,7 +55,7 @@ blockquote {
     max-width: 50ch;
 }
 
-/* Center actual articles, need to review impact on rest of site first
+/* Center actual written articles, need to review impact on rest of site first
 article {
     max-width: 65ch;
     margin-inline: auto;

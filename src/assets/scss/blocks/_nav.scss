@@ -4,16 +4,16 @@
     /* These negative margins keep the text positioning the same visually, while
        allowing adding padding to the individual list items, below, so that they
        stack properly on smaller screens */
-    margin-top: -#{get-size('400')};
-    margin-inline-start: -#{get-size('400')};
+    margin-top: -#{get-size('s')};
+    margin-inline-start: -#{get-size('s')};
 
     &__list {
         display: flex;
         flex-wrap: wrap;
 
         > * {
-            padding-top: get-size('400');
-            padding-inline-start: get-size('400');
+            padding-top: get-size('s');
+            padding-inline-start: get-size('s');
         }
     }
 

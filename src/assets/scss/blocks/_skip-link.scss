@@ -1,7 +1,7 @@
 .skip-link {
     position: absolute;
-    top: get-size('400');
-    left: get-size('400');
+    top: get-size('s');
+    left: get-size('s');
     z-index: 99;
 
     &:not(:focus) {
