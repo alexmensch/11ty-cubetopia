@@ -90,6 +90,10 @@ blockquote {
   padding-inline-start: #{get-size("m")};
   padding-block: #{get-size("2xs")};
   font-style: italic;
+
+  & > blockquote {
+    margin-block-start: #{get-size("xs")};
+  }
 }
 
 :is(ul, ol)[role="list"] {
