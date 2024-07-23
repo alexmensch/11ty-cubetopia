@@ -27,6 +27,8 @@ body {
 a:not([class]) {
   color: currentColor;
   text-decoration-color: get-color("quinary");
+  text-decoration-thickness: 0.2ex;
+  text-underline-offset: 0.35ex;
 }
 
 :focus {
@@ -36,6 +38,10 @@ a:not([class]) {
 
 main:focus {
   outline: none;
+}
+
+article > * {
+  @include apply-utility("measure", "long");
 }
 
 h1 {
@@ -78,6 +84,11 @@ h6 {
   --flow-space: #{get-size("2xs")};
 }
 
+// Compensate for visual difference between mono & serif fonts
+code {
+  font-size: smaller;
+}
+
 pre {
   margin-block-start: var(--flow-space) !important;
   font-size: smaller !important;
@@ -90,7 +101,7 @@ pre {
 blockquote {
   @include apply-utility("measure", "short");
 
-  border-inline-start: 0.75rem solid get-color("quinary");
+  border-inline-start: #{get-size("2xs")} solid get-color("quinary");
   padding-inline-start: #{get-size("m")};
   padding-block: #{get-size("2xs")};
   font-style: italic;
@@ -115,7 +126,7 @@ table {
   caption-side: bottom;
 
   thead {
-    border-block-end: 3px solid get-color("quinary");
+    border-block-end: 0.35ex solid get-color("quinary");
 
     th {
       vertical-align: bottom;
@@ -134,7 +145,8 @@ table {
 }
 
 hr {
-  color: get-color("dark-glare");
+  border: 2px solid get-color("dark-shade");
+  width: #{get-size("xl-2xl")};
 }
 
 // High contrast selection because it can help visually-impaired

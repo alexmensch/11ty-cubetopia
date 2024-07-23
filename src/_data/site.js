@@ -1,8 +1,8 @@
 export default {
   domain: "your-domain.com",
-  authorName: "Your Name",
+  authorName: "Alex Marshall",
   authorEmail: "",
-  siteName: "Your Site",
+  siteName: "Cubetopia",
   includes: [
     {
       rel: "stylesheet",

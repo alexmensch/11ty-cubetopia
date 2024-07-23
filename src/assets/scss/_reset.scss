@@ -14,6 +14,10 @@ html {
   text-size-adjust: none;
 }
 
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
 // Remove default margin in favour of better control in authored CSS
 body,
 h1,
@@ -27,7 +31,8 @@ pre,
 figure,
 blockquote,
 dl,
-dd {
+dd,
+hr {
   margin-block: 0 0;
   margin-inline: 0 0;
   padding-block: 0 0;
@@ -47,7 +52,7 @@ ol:not([role="list"]) {
 // Set core body defaults
 body {
   min-height: 100vh;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 // Set shorter line heights on headings and interactive elements
@@ -64,8 +69,7 @@ label {
 // Balance text wrapping on headings
 h1,
 h2,
-h3,
-h4 {
+h3 {
   text-wrap: balance;
 }
 
@@ -87,8 +91,7 @@ input,
 button,
 textarea,
 select {
-  font-family: inherit;
-  font-size: inherit;
+  font: inherit;
 }
 
 // Make sure textareas without a rows attribute are not tiny
@@ -99,4 +102,20 @@ textarea:not([rows]) {
 // Anything that has been anchored to should have extra scroll margin
 :target {
   scroll-margin-block: 5ex;
+}
+
+// Reduce / eliminate animations and motions for people that don't want it
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

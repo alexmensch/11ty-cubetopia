@@ -4,7 +4,6 @@
 .wrapper {
   max-width: 70rem;
   padding: 0 #{get-size("m")};
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
   position: relative;
 }
