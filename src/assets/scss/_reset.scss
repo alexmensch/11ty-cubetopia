@@ -107,9 +107,9 @@ textarea:not([rows]) {
 // Reduce / eliminate animations and motions for people that don't want it
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {

@@ -1,9 +1,11 @@
 # 11ty-cubetopia
 
 ## What is Cubetopia?
+
 Cubetopia is a modern [Eleventy](https://www.11ty.dev) website baseline that's easy to adapt and extend. It comes out of the box with sensible and responsive styling and site defaults. Minimal, if any, adjustments are necessary to deploy a good-looking website: just add content.
 
 The stack in summary is:
+
 - Node.js
 - 11ty v3 (ESM)
 - Markdown content + frontmatter
