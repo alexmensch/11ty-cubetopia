@@ -9,11 +9,12 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import directoryOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 import { IdAttributePlugin } from "@11ty/eleventy";
+import purgeCssPlugin from "eleventy-plugin-purgecss";
 
 import helpers from "./src/_data/helpers.js";
 import siteConfig from "./src/_data/site.js";
 
-export default function (eleventyConfig) {
+export default async function (eleventyConfig) {
   /* 11ty Plugins */
   /****************/
   // Image transforms
@@ -39,6 +40,14 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(IdAttributePlugin, {
     // Use standard slugify filter
     slugify: helpers.toSlug,
+  });
+
+  eleventyConfig.addPlugin(purgeCssPlugin, {
+    config: {
+      content: ["./_site/**/*.html"],
+      css: ["./_site/assets/css/*.css"],
+    },
+    quiet: true,
   });
 
   // RSS / Atom feed
