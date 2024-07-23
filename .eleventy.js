@@ -73,7 +73,6 @@ export default function (eleventyConfig) {
     "src/assets/css": "assets/css",
     "src/assets/files": "assets/files",
     "src/assets/fonts": "assets/fonts",
-    "src/_redirects": "_redirects",
     "src/404.html": "404.html",
   });
 
