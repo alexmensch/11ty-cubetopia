@@ -8,7 +8,7 @@ The stack in summary is:
 - 11ty v3 (ESM)
 - Markdown content + frontmatter
 - Liquid layout templates
-- [CUBE CSS](https://cube.fyi), a CSS paradigm championed by Andy Bell
+- [CUBE CSS](https://cube.fyi), a CSS paradigm championed by [Andy Bell](https://andy-bell.co.uk)
 - [Utopia](https://utopia.fyi), an approach to scaling type and space without using jarring CSS @media breakpoints.
 
 ## Features
