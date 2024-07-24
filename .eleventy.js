@@ -2,6 +2,7 @@ import md from "markdown-it";
 import mdFN from "markdown-it-footnote";
 import * as sass from "sass";
 import path from "node:path";
+import { promises as fs } from "node:fs";
 
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
@@ -13,6 +14,7 @@ import purgeCssPlugin from "eleventy-plugin-purgecss";
 
 import helpers from "./src/_data/helpers.js";
 import siteConfig from "./src/_data/site.js";
+import fonts from "./src/_data/fonts.js";
 
 export default async function (eleventyConfig) {
   /* 11ty Plugins */
@@ -80,8 +82,6 @@ export default async function (eleventyConfig) {
   /**********************/
   eleventyConfig.addPassthroughCopy({
     "src/assets/css": "assets/css",
-    "src/assets/files": "assets/files",
-    "src/assets/fonts": "assets/fonts",
     "src/404.html": "404.html",
   });
 
@@ -201,6 +201,23 @@ export default async function (eleventyConfig) {
   // Called like this: {{ count | loremIpsum: type }}
   // Where type is one of: words, sentences, paragraphs
   eleventyConfig.addFilter("loremIpsum", helpers.loremIpsum);
+
+  /* Build event handlers */
+  /************************/
+
+  eleventyConfig.on("eleventy.after",
+    async () => {
+      const fontBuffers = await fonts.files();
+
+      for (const { fontBuffer, fileName } of fontBuffers) {
+        const outputPath = path.join('_site', fonts.buildFontPath, fileName);
+        const outputDir = path.dirname(outputPath);
+        
+        await fs.mkdir(outputDir, { recursive: true });
+        await fs.writeFile(outputPath, fontBuffer);
+      }
+    }
+  );
 
   return {
     // Set directories to watch

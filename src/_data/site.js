@@ -1,3 +1,5 @@
+import fonts from "./fonts.js";
+
 export default {
   domain: "your-domain.com",
   authorName: "Alex Marshall",
@@ -6,7 +8,7 @@ export default {
   includes: [
     {
       rel: "stylesheet",
-      href: "/assets/css/fonts.css",
+      href: fonts.buildCSS,
     },
     {
       rel: "stylesheet",
