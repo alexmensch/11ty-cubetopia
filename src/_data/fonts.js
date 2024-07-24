@@ -10,11 +10,12 @@ const buildCSS = "/assets/css/fonts.css";
    fontsPath: used to populate url() in CSS file
  */
 const { localCSS, fontMaps } = await getFontInfo(
-    "https://fonts.googleapis.com/css2?family=Roboto",
-    {
-        base64: false,
-        fontsPath: buildFontPath,
-    });
+  "https://fonts.googleapis.com/css2?family=Roboto",
+  {
+    base64: false,
+    fontsPath: buildFontPath,
+  },
+);
 
 export default {
   css: async function () {
@@ -28,7 +29,7 @@ export default {
         duration: "1w",
         type: "buffer",
       });
-      fonts.push({fontBuffer, fileName});
+      fonts.push({ fontBuffer, fileName });
     }
     return fonts;
   },

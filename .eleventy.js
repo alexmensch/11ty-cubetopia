@@ -205,19 +205,18 @@ export default async function (eleventyConfig) {
   /* Build event handlers */
   /************************/
 
-  eleventyConfig.on("eleventy.after",
-    async () => {
-      const fontBuffers = await fonts.files();
+  // Write configured Google Fonts to build output
+  eleventyConfig.on("eleventy.after", async () => {
+    const fontBuffers = await fonts.files();
 
-      for (const { fontBuffer, fileName } of fontBuffers) {
-        const outputPath = path.join('_site', fonts.buildFontPath, fileName);
-        const outputDir = path.dirname(outputPath);
-        
-        await fs.mkdir(outputDir, { recursive: true });
-        await fs.writeFile(outputPath, fontBuffer);
-      }
+    for (const { fontBuffer, fileName } of fontBuffers) {
+      const outputPath = path.join("_site", fonts.buildFontPath, fileName);
+      const outputDir = path.dirname(outputPath);
+
+      await fs.mkdir(outputDir, { recursive: true });
+      await fs.writeFile(outputPath, fontBuffer);
     }
-  );
+  });
 
   return {
     // Set directories to watch
