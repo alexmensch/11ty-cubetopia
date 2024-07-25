@@ -363,15 +363,12 @@ async function getFontInfo(url, options) {
   const info = new Downloader(url, options);
   const { fonts, css } = await info.extractFontInfo();
   let localCSS = css;
-  const fontMaps = /* @__PURE__ */ new Map();
+  const fontsMap = /* @__PURE__ */ new Map();
   for (const font of fonts) {
     localCSS = localCSS.replace(font.inputText, font.outputText);
-    fontMaps.set(font.inputFont, font.outputFont);
+    fontsMap.set(font.inputFont, font.outputFont);
   }
-  return {
-    localCSS,
-    fontMaps,
-  };
+  return [fontsMap, localCSS];
 }
 
 function merge(...fonts) {

@@ -4,13 +4,8 @@ import { getFontInfo } from "../../google-fonts.mjs";
 const buildFontPath = "/assets/fonts";
 const buildCSS = "/assets/css/fonts.css";
 
-/* outputDir: local base directory
-   stylePath: name of CSS file in ${outputDir}
-   fontsDir:  local directory for fonts: ${outputDir}/${fontsDir}
-   fontsPath: used to populate url() in CSS file
- */
-const { localCSS, fontMaps } = await getFontInfo(
-  "https://fonts.googleapis.com/css2?family=Roboto",
+const [fontMaps, localCSS] = await getFontInfo(
+  "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap",
   {
     base64: false,
     fontsPath: buildFontPath,
