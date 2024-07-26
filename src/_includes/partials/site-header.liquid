@@ -5,8 +5,8 @@
             <a href="/" aria-label="{{ site.siteName }} - Home" class="site-header__brand">
                 {{ site.siteName }}
             </a>
-            <nav class="nav" aria-label="Primary">
-                <ul class="nav__list cluster">
+            <nav class="[ nav site-header__nav ]" aria-label="Primary">
+                <ul class="cluster">
                     {% for item in site.nav %}
                         {% unless item.hidden %}
                             <li>

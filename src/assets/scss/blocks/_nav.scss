@@ -1,11 +1,4 @@
 .nav {
-  line-height: 1;
-  font-weight: 800;
-
-  &__list {
-    --flow-space: #{get-size("xs")};
-  }
-
   a {
     text-decoration: none;
     display: block;
@@ -14,7 +7,8 @@
     // Adds border to active state items
     // Note: done this way to avoid impacting the parent item's dimensions
     &[data-state="active"],
-    &[aria-current="page"] {
+    &[aria-current="page"],
+    &:hover {
       &:before {
         content: "";
         display: block;

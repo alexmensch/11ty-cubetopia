@@ -16,4 +16,10 @@
     text-decoration: none;
     font-weight: 900;
   }
+
+  &__nav {
+    line-height: 1;
+    font-weight: 800;
+    --flow-space: #{get-size("xs")};
+  }
 }
