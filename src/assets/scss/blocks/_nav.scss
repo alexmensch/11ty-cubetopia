@@ -1,20 +1,9 @@
 .nav {
   line-height: 1;
-  font-weight: 900;
-  /* These negative margins keep the text positioning the same visually, while
-       allowing adding padding to the individual list items, below, so that they
-       stack properly on smaller screens */
-  margin-block-start: calc(0rem - #{get-size("s")});
-  margin-inline-start: calc(0rem - #{get-size("s")});
+  font-weight: 800;
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
-
-    > * {
-      padding-block-start: #{get-size("s")};
-      padding-inline-start: #{get-size("s")};
-    }
+    --flow-space: #{get-size("xs")};
   }
 
   a {

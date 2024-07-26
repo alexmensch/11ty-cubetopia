@@ -1,23 +1,19 @@
 .site-header {
-  padding: #{get-size("s")} 0;
+  padding-block-start: #{get-size("s")};
+  padding-block-end: #{get-size("l")};
 
   &__inner {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
+    --flow-space: #{get-size("s")};
   }
 
   &__brand {
     flex-shrink: 0;
-    margin-inline-end: #{get-size("l")}; // Prevents nav bunching
+    padding-inline-end: #{get-size("l")};
 
     @include apply-utility("text", 2);
     text-decoration: none;
     font-weight: 900;
-  }
-
-  &__nav {
-    padding: #{get-size("xs")} 0;
   }
 }

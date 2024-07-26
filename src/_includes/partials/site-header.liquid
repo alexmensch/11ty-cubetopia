@@ -1,12 +1,12 @@
 <a class="[ skip-link ] [ button ]" href="#main-content">Skip to content</a>
 <header role="banner" class="site-header">
     <div class="wrapper">
-        <div class="[ site-header__inner ] [ font-sans ]">
+        <div class="[ site-header__inner cluster ] [ font-sans ]">
             <a href="/" aria-label="{{ site.siteName }} - Home" class="site-header__brand">
                 {{ site.siteName }}
             </a>
-            <nav class="[ nav ] [ site-header__nav ]" aria-label="Primary">
-                <ul class="nav__list">
+            <nav class="nav" aria-label="Primary">
+                <ul class="nav__list cluster">
                     {% for item in site.nav %}
                         {% unless item.hidden %}
                             <li>
