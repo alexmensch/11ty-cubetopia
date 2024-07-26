@@ -104,7 +104,9 @@ blockquote {
   border-inline-start: #{get-size("2xs")} solid get-color("quinary");
   padding-inline-start: #{get-size("m")};
   padding-block: #{get-size("2xs")};
+  
   font-style: italic;
+  @include apply-utility("text", 1);
 
   & > blockquote {
     margin-block-start: #{get-size("xs")};
@@ -186,5 +188,6 @@ hr {
 @import "utilities/flow";
 @import "utilities/radius";
 @import "utilities/site-wrap";
+@import "utilities/switcher";
 @import "utilities/visually-hidden";
 @import "utilities/wrapper";
