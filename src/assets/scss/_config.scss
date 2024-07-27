@@ -86,6 +86,30 @@ $gorko-config: (
     "output": "standard",
     "property": "background",
   ),
+  "border": (
+    "items": (
+      "thin": "1px",
+      "normal": "2px",
+      "thick": "3px",
+    ),
+    "output": "standard",
+    "property": "border-size",
+  ),
+  "border-style": (
+    "items": (
+      "solid": "solid",
+      "dotted": "dotted",
+      "dashed": "dashed",
+      "double": "double",
+    ),
+    "output": "standard",
+    "property": "border-style",
+  ),
+  "border-color": (
+    "items": $gorko-colors,
+    "output": "standard",
+    "property": "border-color",
+  ),
   "color": (
     "items": $gorko-colors,
     "output": "standard",

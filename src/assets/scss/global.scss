@@ -86,9 +86,10 @@ h6 {
 
 code {
   // Compensate for visual difference between mono & serif fonts
-  @include apply-utility("text", "-1");
+  @include apply-utility("text", -1);
 }
 
+// Override PrismJS syntax highlight styling
 pre {
   margin-block-start: var(--flow-space) !important;
   font-size: smaller !important;
