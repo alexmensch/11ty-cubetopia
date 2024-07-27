@@ -228,7 +228,6 @@ export default async function (eleventyConfig) {
     },
     // Define other options like pathPrefix
     templateFormats: ["liquid", "md"],
-    markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "liquid",
   };
 }

@@ -2,9 +2,9 @@
 layout: "layouts/home"
 title: Home
 intro:
-  main: "Vivamus quis tortor metus. Pellentesque faucibus erat sit amet sagittis."
+  main: "Fluid, responsive styling on any device without nasty breakpoints."
   summary: |
-    Fugiat commodo adipisicing culpa elit ut eiusmod cillum ad commodo ipsum occaecat. Reprehenderit culpa aliquip excepteur in commodo eu ea veniam exercitation. Ad sunt enim duis in adipisicing sit aliquip do non. Voluptate esse consequat pariatur in fugiat nisi in elit ex velit aliquip nostrud ipsum. Aliquip in id ut minim id nisi nisi aliquip Lorem ex ea laborum.
+    Cubetopia is designed to be visually appealing and readable with any content, on any device, out of the box. Both type and space scale automatically, and the layout of every component adjusts naturally to the available space. This showcase site demonstrates the styling and the layouts that are available. You're encouraged to preview it on different devices to get a feel for how the fluid type and space adjust automatically. Check out the project on <a href="https://github.com/alexmensch/11ty-cubetopia">Github</a>.
 ---
 
 # Heading 1

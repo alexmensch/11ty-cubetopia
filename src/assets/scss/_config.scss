@@ -104,11 +104,6 @@ $gorko-config: (
     "output": "standard",
     "property": "font-family",
   ),
-  "gap-top": (
-    "items": $gorko-size-scale,
-    "output": "standard",
-    "property": "margin-top",
-  ),
   "leading": (
     "items": (
       "loose": 1.7,
@@ -135,8 +130,15 @@ $gorko-config: (
   ),
   "weight": (
     "items": (
+      "extra-light": 200,
+      "light": 300,
+      "semi-light": 350,
       "normal": 400,
-      "bold": 800,
+      "medium": 600,
+      "semi-bold": 500,
+      "bold": 700,
+      "extra-bold": 800,
+      "black": 900,
     ),
     "output": "standard",
     "property": "font-weight",

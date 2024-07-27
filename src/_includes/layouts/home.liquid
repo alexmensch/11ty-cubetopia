@@ -2,22 +2,15 @@
 layout: layouts/base.liquid
 ---
 <div class="[ wrapper flow ]">
-  <article class="intro flow">
-    <div class="[ intro__header ]">
-      <h1 class="[ intro__heading ] [ weight-bold ]">
+  <article class="[ intro ] [ cluster ] [ flow-space-xs ]">
+    <div class="intro__header">
+      <h1 class="weight-bold">
         {{ intro.main }}
       </h1>
     </div>
     <div class="intro__content">
-      <p class="intro__summary">{{ intro.summary }}</p>
+      <p>{{ intro.summary }}</p>
     </div>
-    <!-- <div class="[ intro__media ] [ radius ]">
-      <img
-        class="[ intro__image ] [ radius ]"
-        src="{{ intro.image }}"
-        alt="{{ intro.imageAlt }}"
-      />
-    </div> -->
   </article>
   <article>
     <div class="[ page-content ] [ flow ]">

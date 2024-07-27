@@ -84,9 +84,9 @@ h6 {
   --flow-space: #{get-size("2xs")};
 }
 
-// Compensate for visual difference between mono & serif fonts
 code {
-  font-size: smaller;
+  // Compensate for visual difference between mono & serif fonts
+  @include apply-utility("text", "-1");
 }
 
 pre {
@@ -161,7 +161,7 @@ hr {
   background: rgba(get-color("dark-shade"), 0.99);
 }
 
-// Scrollbar styles
+// Scrollbar style
 ::-webkit-scrollbar {
   height: 1rem;
 }
@@ -175,8 +175,9 @@ hr {
   background-color: get-color("dark");
 }
 
-// Import blocks
+// Import block
 @import "blocks/button";
+@import "blocks/intro";
 @import "blocks/skip-link";
 @import "blocks/site-header";
 @import "blocks/nav";

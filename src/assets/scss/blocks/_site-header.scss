@@ -5,21 +5,16 @@
   &__inner {
     justify-content: space-between;
     align-items: baseline;
-    --flow-space: #{get-size("s")};
   }
 
   &__brand {
     flex-shrink: 0;
     padding-inline-end: #{get-size("l")};
 
-    @include apply-utility("text", 2);
     text-decoration: none;
-    font-weight: 900;
   }
 
   &__nav {
     line-height: 1;
-    font-weight: 800;
-    --flow-space: #{get-size("xs")};
   }
 }

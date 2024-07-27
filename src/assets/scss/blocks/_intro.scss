@@ -1,0 +1,18 @@
+.intro {
+
+    &__header {
+        flex: 1 1 get-utility-value("measure", "compact");
+    }
+
+    &__content {
+        flex: 2 2 get-utility-value("measure", "short");
+    }
+
+    &[data-state='reversed'] {
+        flex-direction: row-reverse;
+
+        & .intro__header {
+            text-align: end;
+        }
+    }
+}
