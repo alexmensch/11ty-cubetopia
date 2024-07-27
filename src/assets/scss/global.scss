@@ -157,9 +157,7 @@ hr {
 ::selection {
   color: get-color("light");
 
-  // We set this as an RGBA because that’s how you get a solid color, by using 0.99
-  // alpha value. Browsers are wild.
-  background: rgba(get-color("dark-shade"), 0.99);
+  background: get-color("dark-shade");
 }
 
 // Scrollbar style
@@ -187,7 +185,9 @@ hr {
 
 // Import utilities
 @import "utilities/cluster";
+@import "utilities/drop-cap";
 @import "utilities/flow";
+@import "utilities/grid";
 @import "utilities/radius";
 @import "utilities/site-wrap";
 @import "utilities/switcher";

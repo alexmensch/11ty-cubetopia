@@ -2,12 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--flow-space);
-    --switcher-width: 25rem;
+    // Set a sensible default which can be overridden in blocks
+    --min-width: 25rem;
 }
 
 .switcher > * {
     flex-grow: 1;
-    flex-basis: calc(( var(--switcher-width) - 100%) * 999);
+    flex-basis: calc(( var(--min-width) - 100%) * 999);
 }
 
 .switcher > :nth-last-child(n+3),

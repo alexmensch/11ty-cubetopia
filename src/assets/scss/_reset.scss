@@ -1,4 +1,8 @@
-// From https://piccalil.li/blog/a-more-modern-css-reset/ with some minor modifications
+// From https://piccalil.li/blog/a-more-modern-css-reset/ with modifications
+
+:root {
+  --line-height: 1.7;
+}
 
 // Box sizing rules
 *,
@@ -52,7 +56,7 @@ ol:not([role="list"]) {
 // Set core body defaults
 body {
   min-height: 100vh;
-  line-height: 1.7;
+  line-height: var(--line-height);
 }
 
 // Set shorter line heights on headings and interactive elements
@@ -63,7 +67,7 @@ h4,
 button,
 input,
 label {
-  line-height: 1.1;
+  --line-height: 1.1;
 }
 
 // Balance text wrapping on headings
