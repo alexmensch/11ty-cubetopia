@@ -3,8 +3,7 @@
     padding-inline-end: 0.075em;
     margin-block-start: -0.075em;
     
-    // TODO: This can be simplified using the 'lh' relative value
-    font-size: calc(3.2em * var(--line-height));
+    font-size: 3lh;
     @include apply-utility("weight", "black");
     line-height: 1;
 }
