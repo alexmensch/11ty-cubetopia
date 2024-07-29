@@ -1,8 +1,7 @@
 .intro {
-    container: intro / inline-size;
-
     $header-width: get-utility-value("measure", "compact");
     $content-width: get-utility-value("measure", "short");
+    container: intro / inline-size;
 
     &__header {
         flex: 1 1 $header-width;
@@ -21,7 +20,12 @@
             text-align: end;
         }
 
-        @container intro (width < calc($header-width + $content-width)) {
+        // Because var(--flow-space) cannot be used in a @container query, there's a 
+        // compromise here to add the smallest possible gap size when switching text
+        // alignment. Better to switch a little late than early if a larger gap size
+        // were chosen. It would be nice to fix this in the future to have a precise
+        // switchover container width
+        @container intro (width < calc(#{$header-width} + #{$content-width} + #{get-size("2xs")})) {
             .intro__header {
                 text-align: start;
             }
