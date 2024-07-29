@@ -1,11 +1,17 @@
 .intro {
+    container: intro / inline-size;
+
+    $header-width: get-utility-value("measure", "compact");
+    $content-width: get-utility-value("measure", "short");
 
     &__header {
-        flex: 1 1 get-utility-value("measure", "compact");
+        flex: 1 1 $header-width;
+        align-content: flex-start;
     }
 
     &__content {
-        flex: 2 2 get-utility-value("measure", "short");
+        flex: 2 2 $content-width;
+        align-content: flex-end;
     }
 
     &[data-state='reversed'] {
@@ -13,6 +19,12 @@
 
         & .intro__header {
             text-align: end;
+        }
+
+        @container intro (width < calc($header-width + $content-width)) {
+            .intro__header {
+                text-align: start;
+            }
         }
     }
 }

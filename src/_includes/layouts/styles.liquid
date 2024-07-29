@@ -1,0 +1,18 @@
+---
+layout: layouts/base.liquid
+---
+<div class="[ wrapper flow ]">
+  <section class="[ intro ] [ cluster ] [ flow-space-xs ]" data-state="reversed">
+    <div class="intro__header">
+      <h1 class="weight-bold">
+        {{ intro.main }}
+      </h1>
+    </div>
+    <div class="intro__content">
+      <p>{{ intro.summary }}</p>
+    </div>
+  </section>
+  <article class="[ page-content ] [ flow ]">
+    {{ content }}
+  </article>
+</div>

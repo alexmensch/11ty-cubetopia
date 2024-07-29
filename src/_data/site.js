@@ -25,8 +25,8 @@ export default {
     subtitle: "A feed of all of my posts",
   },
   nav: [
+    { title: "Styles", url: "/styles/" },
     { title: "Posts", url: "/posts/", collection: true },
-    { title: "About", url: "/about/" },
     { title: "Hidden Section", url: "/hidden-section/", hidden: true },
     { title: "Contact", url: "/contact/" },
   ],
