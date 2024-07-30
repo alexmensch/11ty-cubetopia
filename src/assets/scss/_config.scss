@@ -90,10 +90,10 @@ $gorko-config: (
     "items": (
       "thin": "1px",
       "normal": "2px",
-      "thick": "3px",
+      "thick": "4px",
     ),
     "output": "standard",
-    "property": "border-size",
+    "property": "border-width",
   ),
   "border-style": (
     "items": (
@@ -132,7 +132,7 @@ $gorko-config: (
     "items": (
       "loose": 1.7,
       "tight": 1.3,
-      "flat": "1.1",
+      "flat": 1.1,
     ),
     "output": "standard",
     "property": "line-height",

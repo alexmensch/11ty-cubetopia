@@ -127,6 +127,7 @@ table {
   text-align: start;
   border-collapse: collapse;
   caption-side: bottom;
+  font-variant-numeric: tabular-nums;
 
   thead {
     border-block-end: 0.35ex solid get-color("quinary");
@@ -174,7 +175,7 @@ hr {
   background-color: get-color("dark");
 }
 
-// Import block
+// Import blocks
 @import "blocks/button";
 @import "blocks/intro";
 @import "blocks/skip-link";

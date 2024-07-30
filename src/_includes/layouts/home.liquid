@@ -12,22 +12,24 @@ layout: layouts/base.liquid
       <p>{{ intro.summary }}</p>
     </div>
   </section>
-  <article>
-    <h2>Design principles</h2>
-    <p>This is some text.</p>
+  <article class="flow">
+    <h2>Who is this for?</h2>
+    <p>Cubetopia is intended for personal, content-driven websites where writing is the primary medium. This encompasses a huge proportion of the content that exists on the web, but it's surprisingly difficult to find a starting template that is easy to deploy, looks good with minimal customization, works on any device or viewport size, and comes with easily reusable CSS classes that can be used to customize and extend the site in the future.</p>
+    <p>The web was originally designed for the exchange of written content and ideas, and Cubetopia is a return to that simplicity and purpose. Deliberately easy to read and fast to load, nothing but HTML and CSS are used, making the site lightweight and simple to host as a static site.</p>
     <section class="[ switcher ] [ flow-space-m ]">
-      <div class="box">
-        <p>box 1</p>
+      <div class="[ box flow ] [ border-thick border-style-solid border-color-primary bg-light-glare ]">
+        <h3>Opinionated defaults</h3>
+        <p>The default styling is opinionated but grounded in timeless design principles. Branding and styling can be easily changed via configuration, and the built in layout blocks can be combined in ways unique to your needs.</p>
       </div>
-      <div class="box">
-        <p>box 2</p>
+      <div class="[ box flow ] [ border-thick border-style-solid border-color-primary bg-light-glare ]">
+        <h3>Look great on any device</h3>
+        <p>It's impossible to know what size device or viewport a user will view your site in, which is why Cubetopia is built so that you never have to worry about it. Every layout block, space, and even the typograhy fluidly resizes and reconfigures gracefully to ensure that the site is always readable and stylish.</p>
       </div>
-      <div class="box">
-        <p>box 3</p>
+      <div class="[ box flow ] [ border-thick border-style-solid border-color-primary bg-light-glare ]">
+        <h3>Focus on the content</h3>
+        <p>Because all the hard work of building the layouts is done for you, all you need to do is focus on adding content to the site. User-friendly, readable design and typography are important to keep visitors engaged, but do not need to be reinvented every time.</p>
       </div>
     </section>
-  </article>
-  <article class="[ page-content ] [ flow ]">
-    {{ content }}
+    <p>I'm leaning heavily on [Andy Bell](https://x.com/belldotbz)'s [CUBE CSS](https://cube.fyi) principles and making use of [James Gilyead](https://x.com/j98) and [Trys Mudford](https://x.com/trysmudford)'s [Utopia](https://utopia.fyi) fluid type and space scaling. Combined, their approaches to web design make for a delightful experience for both developers and end users alike.</p>
   </article>
 </div>
