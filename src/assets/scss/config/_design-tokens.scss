@@ -74,6 +74,11 @@ $gorko-colors: (
   "quinary-glare": #f26c7f,
 );
 
+$fonts: (
+  "base": '"Source Serif 4", Georgia, serif',
+  "sans": '"Inter", Helvetica, sans-serif',
+);
+
 // CORE CONFIG
 // This powers everything from utility class generation to breakpoints
 // to enabling/disabling pre-built components/utilities.
@@ -121,10 +126,7 @@ $gorko-config: (
     "property": "--flow-space",
   ),
   "font": (
-    "items": (
-      "base": '"Source Serif 4", Georgia, serif',
-      "sans": '"Inter", Helvetica, sans-serif',
-    ),
+    "items": $fonts,
     "output": "standard",
     "property": "font-family",
   ),
