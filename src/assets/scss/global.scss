@@ -1,198 +1,28 @@
 // Import gorko config and Gorko utility
-@import "config";
+@import "config/design-tokens";
 @import "../../../node_modules/gorko/gorko.scss";
 
-@import "reset";
+@import "global/reset";
+@import "global/variables";
+@import "global/global-styles";
 
-// Global styles start
-:root {
-  --flow-space: #{get-size("l")};
-}
-
-/* Debug: draw borders around all blocks */
-/*
-* {
-  border: 1px solid rgba(black, 0.2);
-}
-*/
-
-body {
-  background: get-color("light");
-  color: get-color("dark-shade");
-
-  @include apply-utility("text", 0);
-  @include apply-utility("font", "base");
-}
-
-a:not([class]) {
-  color: currentColor;
-  text-decoration-color: get-color("quinary");
-  text-decoration-thickness: 0.2ex;
-  text-underline-offset: 0.35ex;
-}
-
-:focus {
-  outline: 2px dashed get-color("primary");
-  outline-offset: 0.25rem;
-}
-
-main:focus {
-  outline: none;
-}
-
-h1 {
-  @include apply-utility("text", 5);
-}
-
-h2 {
-  @include apply-utility("text", 4);
-}
-
-h3 {
-  @include apply-utility("text", 3);
-}
-
-h4 {
-  @include apply-utility("text", 2);
-}
-
-h5 {
-  @include apply-utility("text", 1);
-}
-
-h6 {
-  @include apply-utility("text", 0);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include apply-utility("weight", "bold");
-  @include apply-utility("font", "sans");
-  @include apply-utility("leading", "flat");
-  @include apply-utility("measure", "compact");
-}
-
-:is(h1, h2, h3, h4, h5, h6) + * {
-  --flow-space: #{get-size("2xs")};
-}
-
-p {
-  @include apply-utility("measure", "long");
-}
-
-code {
-  // Compensate for visual difference between mono & serif fonts
-  @include apply-utility("text", -1);
-}
-
-// Override PrismJS syntax highlight styling
-pre {
-  margin-block-start: var(--flow-space) !important;
-  font-size: smaller !important;
-
-  &[class*="language-"] {
-    background: get-color("light-glare");
-  }
-}
-
-blockquote {
-  @include apply-utility("measure", "short");
-
-  border-inline-start: #{get-size("2xs")} solid get-color("quinary");
-  padding-inline-start: #{get-size("m")};
-  padding-block: #{get-size("2xs")};
-
-  font-style: italic;
-  @include apply-utility("text", 1);
-
-  & > blockquote {
-    margin-block-start: #{get-size("xs")};
-  }
-}
-
-:is(ul, ol)[role="list"] {
-  padding-inline-start: #{get-size("m")};
-
-  li + li,
-  li > :is(ul, ol) {
-    margin-block-start: #{get-size("2xs")};
-  }
-}
-
-table {
-  text-align: start;
-  border-collapse: collapse;
-  caption-side: bottom;
-  font-variant-numeric: tabular-nums;
-
-  thead {
-    border-block-end: 0.35ex solid get-color("quinary");
-
-    th {
-      vertical-align: bottom;
-      background: get-color("light-glare");
-    }
-  }
-
-  th,
-  td {
-    border: 1px solid get-color("dark-glare");
-    padding: #{get-size("2xs")} #{get-size("2xs")};
-
-    vertical-align: baseline;
-    text-align: end;
-  }
-}
-
-hr {
-  border: 2px solid get-color("dark-shade");
-  width: #{get-size("xl-2xl")};
-}
-
-// High contrast selection because it can help visually-impaired
-// folks read the text easier
-::selection {
-  color: get-color("light");
-
-  background: get-color("dark-shade");
-}
-
-// Scrollbar style
-::-webkit-scrollbar {
-  height: 1rem;
-}
-
-::-webkit-scrollbar-track {
-  background-color: transparent;
-  border: 1px solid get-color("dark-glare");
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: get-color("dark");
-}
-
-// Import blocks
 @import "blocks/button";
-@import "blocks/intro";
-@import "blocks/skip-link";
-@import "blocks/site-header";
+@import "blocks/footnotes";
 @import "blocks/nav";
 @import "blocks/site-footer";
-@import "blocks/footnotes";
+@import "blocks/skip-link";
 
-// Import utilities
+@import "compositions/flow";
+@import "compositions/intro";
+@import "compositions/site-header";
+@import "compositions/switcher";
+
 @import "utilities/box";
 @import "utilities/center";
 @import "utilities/cluster";
 @import "utilities/drop-cap";
-@import "utilities/flow";
 @import "utilities/grid";
 @import "utilities/radius";
 @import "utilities/site-wrap";
-@import "utilities/switcher";
 @import "utilities/visually-hidden";
 @import "utilities/wrapper";
