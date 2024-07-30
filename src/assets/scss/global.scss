@@ -11,16 +11,16 @@
 @import "blocks/site-footer";
 @import "blocks/skip-link";
 
+@import "compositions/center";
+@import "compositions/cluster";
 @import "compositions/flow";
+@import "compositions/grid";
 @import "compositions/intro";
 @import "compositions/site-header";
 @import "compositions/switcher";
 
 @import "utilities/box";
-@import "utilities/center";
-@import "utilities/cluster";
 @import "utilities/drop-cap";
-@import "utilities/grid";
 @import "utilities/radius";
 @import "utilities/site-wrap";
 @import "utilities/visually-hidden";
