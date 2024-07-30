@@ -1,8 +1,11 @@
 .grid {
-    display: grid;
-    grid-gap: var(--flow-space);
+  display: grid;
+  grid-gap: var(--flow-space);
 
-    // Set a sensible default which can be overridden in blocks
-    --min-width: 12rem;
-    grid-template-columns: repeat(auto-fit, minmax(min(var(--min-width), 100%), 1fr));
+  // Set a sensible default which can be overridden in blocks
+  --min-item-width: 12rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--min-item-width), 100%), 1fr)
+  );
 }

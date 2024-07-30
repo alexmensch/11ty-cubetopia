@@ -1,9 +1,9 @@
 .drop-cap > p:first-of-type::first-letter {
-    float: inline-start;
-    padding-inline-end: 0.075em;
-    margin-block-start: -0.075em;
-    
-    font-size: 3lh;
-    @include apply-utility("weight", "black");
-    line-height: 1;
+  float: inline-start;
+  padding-inline-end: 0.075em;
+  margin-block-start: -0.1em;
+
+  font-size: 3.2lh;
+  @include apply-utility("weight", "black");
+  line-height: 1;
 }

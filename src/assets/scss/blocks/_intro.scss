@@ -1,34 +1,34 @@
 .intro {
-    $header-width: get-utility-value("measure", "compact");
-    $content-width: get-utility-value("measure", "short");
-    container: intro / inline-size;
+  $header-width: get-utility-value("measure", "compact");
+  $content-width: get-utility-value("measure", "short");
+  container: intro / inline-size;
 
-    &__header {
-        flex: 1 1 $header-width;
-        align-content: flex-start;
+  &__header {
+    flex: 1 1 $header-width;
+    align-content: flex-start;
+  }
+
+  &__content {
+    flex: 2 2 $content-width;
+    align-content: flex-end;
+  }
+
+  &[data-state="reversed"] {
+    flex-direction: row-reverse;
+
+    & .intro__header {
+      text-align: end;
     }
 
-    &__content {
-        flex: 2 2 $content-width;
-        align-content: flex-end;
+    // Because var(--flow-space) cannot be used in a @container query, there's a
+    // compromise here to add the smallest possible gap size when switching text
+    // alignment. Better to switch a little late than early if a larger gap size
+    // were chosen. It would be nice to fix this in the future to have a precise
+    // switchover container width
+    @container intro (width < calc(#{$header-width} + #{$content-width} + #{get-size("2xs")})) {
+      .intro__header {
+        text-align: start;
+      }
     }
-
-    &[data-state='reversed'] {
-        flex-direction: row-reverse;
-
-        & .intro__header {
-            text-align: end;
-        }
-
-        // Because var(--flow-space) cannot be used in a @container query, there's a 
-        // compromise here to add the smallest possible gap size when switching text
-        // alignment. Better to switch a little late than early if a larger gap size
-        // were chosen. It would be nice to fix this in the future to have a precise
-        // switchover container width
-        @container intro (width < calc(#{$header-width} + #{$content-width} + #{get-size("2xs")})) {
-            .intro__header {
-                text-align: start;
-            }
-        }
-    }
+  }
 }
