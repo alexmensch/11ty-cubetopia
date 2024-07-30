@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--flow-space);
+
   $max-items: 3;
   // Set a sensible default which can be overridden in blocks
   --min-item-width: #{get-utility-value("measure", "compact")};

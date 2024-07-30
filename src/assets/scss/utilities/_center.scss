@@ -1,0 +1,8 @@
+.center {
+  box-sizing: content-box;
+  margin-inline: auto;
+  padding-inline: #{get-size("s")};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

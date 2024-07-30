@@ -40,10 +40,6 @@ main:focus {
   outline: none;
 }
 
-article > * {
-  @include apply-utility("measure", "long");
-}
-
 h1 {
   @include apply-utility("text", 5);
 }
@@ -82,6 +78,10 @@ h6 {
 
 :is(h1, h2, h3, h4, h5, h6) + * {
   --flow-space: #{get-size("2xs")};
+}
+
+p {
+  @include apply-utility("measure", "long");
 }
 
 code {
@@ -185,6 +185,7 @@ hr {
 
 // Import utilities
 @import "utilities/box";
+@import "utilities/center";
 @import "utilities/cluster";
 @import "utilities/drop-cap";
 @import "utilities/flow";

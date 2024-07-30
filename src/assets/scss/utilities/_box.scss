@@ -1,5 +1,5 @@
 .box {
-  padding: #{get-size("s")};
+  padding: #{get-size("xs")};
 
   // Make box "visible" in high contrast themes for accessibility
   outline: 0.125rem solid transparent;
