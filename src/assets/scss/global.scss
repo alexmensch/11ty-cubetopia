@@ -5,6 +5,13 @@
 @import "global/variables";
 @import "global/global-styles";
 
+@import "utilities/box";
+@import "utilities/drop-cap";
+@import "utilities/radius";
+@import "utilities/site-wrap";
+@import "utilities/visually-hidden";
+@import "utilities/wrapper";
+
 @import "blocks/button";
 @import "blocks/footnotes";
 @import "blocks/nav";
@@ -18,10 +25,3 @@
 @import "compositions/intro";
 @import "compositions/site-header";
 @import "compositions/switcher";
-
-@import "utilities/box";
-@import "utilities/drop-cap";
-@import "utilities/radius";
-@import "utilities/site-wrap";
-@import "utilities/visually-hidden";
-@import "utilities/wrapper";

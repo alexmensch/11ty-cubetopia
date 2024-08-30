@@ -1,15 +1,10 @@
-.switcher {
+@mixin switcher($max-items, $min-item-width) {
   display: flex;
   flex-wrap: wrap;
   gap: var(--flow-space);
 
-  $max-items: 3;
-  // Set a sensible default which can be overridden in blocks
-  --min-item-width: #{get-utility-value("measure", "compact")};
   --min-width: calc(
-    (#{$max-items} * var(--min-item-width)) + (var(--flow-space)) * #{$max-items -
-      1}
-  );
+    (#{$max-items} * #{$min-item-width}) + (var(--flow-space) * #{$max-items - 1}));
 
   & > * {
     flex: 1 1 calc((var(--min-width) - 100%) * 999);
@@ -20,4 +15,8 @@
   & > :nth-last-child(n + #{$max-items + 1}) ~ * {
     flex-basis: 100%;
   }
+}
+
+.switcher {
+  @include switcher(3, #{get-utility-value("measure", "compact")});
 }

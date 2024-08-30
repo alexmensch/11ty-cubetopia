@@ -5,6 +5,6 @@
   z-index: 99;
 
   &:not(:focus) {
-    @extend .visually-hidden;
+    @include visually-hidden;
   }
 }

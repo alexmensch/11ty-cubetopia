@@ -1,5 +1,5 @@
 .button {
-  @extend .radius;
+  @include radius;
 
   display: inline-block;
   padding: 0.5rem 2rem;
