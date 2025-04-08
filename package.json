@@ -40,7 +40,7 @@
     "ofetch": "^1.4.1",
     "slugify": "^1.6.6",
     "ufo": "^1.6.0",
-    "utopia-core-scss": "^1.1.0"
+    "utopia-core-scss": "^1.2.1"
   },
   "devDependencies": {
     "prettier": "^3.5.3"
