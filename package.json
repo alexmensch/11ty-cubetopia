@@ -39,7 +39,7 @@
     "sass": "^1.81.0",
     "ofetch": "^1.4.1",
     "slugify": "^1.6.6",
-    "ufo": "^1.5.4",
+    "ufo": "^1.6.0",
     "utopia-core-scss": "^1.1.0"
   },
   "devDependencies": {
